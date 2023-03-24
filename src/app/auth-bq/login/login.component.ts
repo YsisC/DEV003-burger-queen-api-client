@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import{FormControl, FormGroup,  Validators} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { UserService } from '../service/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +15,7 @@ export class LoginComponent  implements OnInit  {
 Cuentas = '';
 
   url = 'http://localhost:5000/auth';
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private userService:UserService, private router:Router) {
     // this.http.get(this.url).toPromise().then(data => {
     //   // console.log(data);
     //   this.Cuentas = JSON.stringify(data);
@@ -41,7 +43,7 @@ logindata(login: any){
   const pasword = login.value.pasword;
   console.log(user);
   console.log(pasword);
-
+// this.userService.login(login.value)
   this.http.get(this.url).toPromise().then(data => {
     // console.log(data);
     this.Cuentas = JSON.stringify(data);
@@ -51,6 +53,7 @@ logindata(login: any){
    if(users.includes(user)&& users.includes(pasword)){
     console.log(user,"registrado");
     console.log(pasword,"registrado");
+    this.router.navigate(['/signup'])
    }else{
         console.log('No te encuentras registrado habla con tu administrador')
    }

@@ -70,7 +70,7 @@ article{
 @media (max-width: 860px ) {
     main{
       flex-direction: column;
-      padding: 1.5rem;
+      padding: 2rem;
     }  
     .leftSide{
         margin:0.2rem;
@@ -89,7 +89,7 @@ article{
   /* mobile */
   @media (max-width: 600px ) {
     main{
-      padding: 0.5rem;
+      padding: 1rem;
     }  
     .left{
         margin:0.2rem
