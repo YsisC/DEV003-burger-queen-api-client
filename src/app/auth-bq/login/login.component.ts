@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent  implements OnInit  {
-  login: FormGroup|any;
+  // login: FormGroup|any;
   // constructor(private _http:HttpClient, private _route:Router){}
 Cuentas = '';
 
@@ -22,17 +22,23 @@ Cuentas = '';
   }
 
   ngOnInit(): void {
-  this.login = new FormGroup({
-    'fname': new FormControl('', Validators.required),
-    'pasword': new FormControl('', [Validators.required, Validators.email])
-  })
+  // this.login = new FormGroup({
+  //   fname: new FormControl('', [Validators.required, Validators.email]),
+  //   pasword: new FormControl('',  [Validators.required, Validators.minLength(6), 
+  //     Validators.maxLength(15) ])
+  // })
 
 }
-
-logindata(login: FormGroup){
-  console.log(this.login.value)
-  const user = this.login.value.fname;
-  const pasword = this.login.value.pasword;
+login =  new FormGroup({
+  fname: new FormControl('', [Validators.required, Validators.email]),
+  pasword: new FormControl('',  [Validators.required, Validators.minLength(6), 
+    Validators.maxLength(15) ])
+})
+logindata(login: any){
+  console.log(login.value)
+  // console.log(this.login.value)
+  const user = login.value.fname;
+  const pasword = login.value.pasword;
   console.log(user);
   console.log(pasword);
 
@@ -49,5 +55,12 @@ logindata(login: FormGroup){
         console.log('No te encuentras registrado habla con tu administrador')
    }
   })
+}
+
+get email():FormControl{
+  return this.login.get("fname") as FormControl
+}
+get password():FormControl{
+  return this.login.get("pasword") as FormControl
 }
 }
