@@ -49,11 +49,11 @@ logindata(login: any){
     this.Cuentas = JSON.stringify(data);
     
    const users = this.Cuentas
-  //  console.log(users); 
+   console.log(users); 
    if(users.includes(user)&& users.includes(pasword)){
     console.log(user,"registrado");
     console.log(pasword,"registrado");
-    this.router.navigate(['/signup'])
+    // this.router.navigate(['/dashboard/waiter'])
    }else{
         console.log('No te encuentras registrado habla con tu administrador')
    }
