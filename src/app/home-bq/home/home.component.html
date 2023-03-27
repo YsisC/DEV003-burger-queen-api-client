@@ -11,10 +11,10 @@
       
 
        <nav class="menulist">
-        <span class="material-symbols-outlined" >
+        <span class="material-symbols-outlined" (click)="toggleMenu()">
           menu
           </span>
-          <ul>
+          <ul *ngIf="isMenuOpened">
             <li routerLink="/login">Ingresar</li>
             <li  routerLink="/signup"> Registrarse</li>
           </ul>
@@ -40,7 +40,7 @@
    
   <div class="leftSide">
      <h1 class="primaryText">La mejor opcion para comer Hamburguesas</h1>
-     <p class="secondaryText text-red">Puedes comer la mejor!</p>
+     <p class="secondaryText text-red mb-4">Puedes comer la mejor!</p>
      <div class="schedule">
       <h3 class="primaryText text-red">Desayuno</h3>
       <p class="secondaryText">Horario: 07:00 a 10:00</p>

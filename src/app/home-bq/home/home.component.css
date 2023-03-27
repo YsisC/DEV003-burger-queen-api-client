@@ -48,6 +48,7 @@ main{
    
 }
 ul{
+    display: flex;
     text-transform: uppercase;
     font-size: 1rem;
     list-style: none;
@@ -152,22 +153,22 @@ article{
         display: block;
     }
     ul{
+       
         position: absolute;
-                list-style: none;
-                gap: 2rem;
-                font-weight: 500;
-                flex-direction: column;
-                right: 0;
-                top: 3rem;
-                width: 50%;
-                min-width: 15rem;
-                background-color: white;
-                display: flex;
-                border-radius: 2rem;
-                transition: all 300ms ease;
-                align-items: flex-start;
-                padding: 2rem;
-                justify-content: flex-end;
-                box-shadow: 0 4px 4px rgba( 0,0,0, 0.5);
+        list-style: none;
+        gap: 2rem;
+        font-weight: 500;
+        flex-direction: column;
+        right: 0;
+        top: 3rem;
+        width: 50%;
+        min-width: 15rem;
+        background-color: white;
+        border-radius: 2rem;
+        transition: all 300ms ease;
+        align-items: flex-start;
+         padding: 2rem;
+        justify-content: flex-end;
+         box-shadow: 0 4px 4px rgba( 0,0,0, 0.5);
     }
   }
