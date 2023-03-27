@@ -7,8 +7,8 @@
             <input type="text" formControlName='fname' class="form-control mb-3 mt-3" placeholder="Enter email" />
 
              <div class="alert alert-danger mt-2" *ngIf="email.errors?.['required'] && email.touched" >
-                El email es obligatorio
-            </div>
+                El mail es obligatorio
+            </div>e
             <div class="alert alert-danger mt-2" *ngIf="email.errors?.['email'] && email.touched" >
                 El email es invalido
             </div>
@@ -19,10 +19,10 @@
             <input type="password" formControlName='pasword' class="form-control mb-3 mt-3"
                 placeholder="Enter pasword" />
                 <div class="alert alert-danger mt-2" [hidden]="password.valid || password.pristine" >
-                    <span *ngIf="password.errors?.['required'] && password.touched">El pasword es obligatorio</span>
+                    <span *ngIf="password.errors?.['required'] && password.touched || password.pristine">El pasword es obligatorio</span>
 
-                    <span *ngIf="password.errors?.['minlength'] && password.touched">El password debe ser contener minimo 6 caracteres </span>
-                    <span *ngIf="password.errors?.['maxlength'] && password.touched">El password debe ser contener maximo 15 caracteres</span>
+                    <span *ngIf="password.errors?.['minlength'] && password.touched|| password.pristine">El password debe ser contener minimo 6 caracteres </span>
+                    <span *ngIf="password.errors?.['maxlength'] && password.touched|| password.pristine">El password debe ser contener maximo 15 caracteres</span>
                 </div>
                
         </div>

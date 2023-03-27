@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthBqModule } from './auth-bq/auth-bq.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PruebaComponent } from './prueba/prueba.component';
 
 
 
@@ -12,6 +13,7 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
+    PruebaComponent,
 
   ],
   imports: [

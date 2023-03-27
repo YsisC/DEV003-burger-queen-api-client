@@ -152,8 +152,10 @@ article{
         align-self: flex-end;
         display: block;
     }
+   
+   
     ul{
-       
+       display: flex;
         position: absolute;
         list-style: none;
         gap: 2rem;
